@@ -1,0 +1,24 @@
+{
+  "name": "instashow",
+  "version": "0.0.0",
+  "authors": [
+    "Antonio Mello <acmello.ti@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "almond": "~0.3.1",
+    "underscore": "~1.8.3",
+    "eventEmitter": "~4.2.11",
+    "prefix-free": "gh-pages",
+    "bootstrap": "~3.3.4",
+    "q": "1.0.1",
+    "when": "~3.7.3"
+  }
+}
