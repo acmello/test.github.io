@@ -1,5 +1,7 @@
 ;(function(global) {
 
+  var pub = new EventEmitter();
+
   /**
   * Controller responsible to manage
   * the logic that controls the flow of
@@ -7,14 +9,13 @@
   **/
   function ImageController() {
     this.data = [];
-    this.pub = new EventEmitter();
   }
 
   /**
   * Runs the loop to execute the carousel
   * that changes the images sequence
   **/
-  ImageController.run = function() {
+  var run = function() {
     var current, upcoming;
 
     if(this.data.length > 0) {
@@ -23,10 +24,10 @@
 
       setTimeout(function() {
         // moving the main image to the end
-        this.moveToEnd();
+        moveToEnd();
 
         // letting the subscribers know
-        this.pub.emmit('imageHasChanged', current, upcoming);
+        pub.emmit('imageHasChanged', current, upcoming);
       }, 5000);
     }
   };
@@ -35,8 +36,13 @@
   * Get the first item on index 0 and move to the
   * end of the list.length-1
   **/
-  ImageController.prototype.moveToEnd = function() {
+  var moveToEnd = function() {
     this.data.push(this.data.shift());
+  };
+
+  ImageController.prototype.init = function() {
+      console.log("controller is running...");
+      //run();
   };
 
   // global API

@@ -1,20 +1,33 @@
-(function(global) {
+;(function(global) {
   'use strict'
+
+  function buildURL(urlObj) {
+    var url = urlObj.url, key, params = urlObj.params;
+    for(key in params) {
+      if(params.hasOwnProperty(key)) {
+        url += url.charAt(url.length-1) !== "?"
+          ? "?" + key + "=" + params[key]
+          : "&" + key + "=" + params[key]
+      }
+    }
+
+    return url;
+  }
 
   /**
   * Services responsible for bringing raw
   * data from the webserver
   * @param {String} endpoint URL
   **/
-  function ImageService(url) {
+  function ImageService(urlObj) {
     this.data = [];
-    this._url = url;
+    this._url = buildURL(urlObj);
   }
 
   /**
   * Get all images available
   **/
-  Service.prototype.getAll = function() {
+  ImageService.prototype.getAll = function() {
     return ajax(url);
   }
 
