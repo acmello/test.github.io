@@ -4,7 +4,8 @@
 
   // setting up the service provider
   var service = new instashow.ImageService({
-    url: 'http://instashow.jelasticlw.com.br/',
+    url: 'http://instashow.jelasticlw.com.br/instashow/app/mobile/',
+    call: "getClientData",
     params: {
       clientId: 123456,
       lastTimestamp: new Date().getTime(),

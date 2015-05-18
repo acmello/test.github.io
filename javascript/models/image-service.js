@@ -2,10 +2,13 @@
   'use strict'
 
   function buildURL(urlObj) {
-    var url = urlObj.url, key, params = urlObj.params;
+    var url = urlObj.url.concat(urlObj.call)
+      , params = urlObj.params
+      , key
+
     for(key in params) {
       if(params.hasOwnProperty(key)) {
-        url += url.charAt(url.length-1) !== "?"
+        url += !(/\?/g.test(url))
           ? "?" + key + "=" + params[key]
           : "&" + key + "=" + params[key]
       }
@@ -22,6 +25,7 @@
   function ImageService(urlObj) {
     this.data = [];
     this._url = buildURL(urlObj);
+    console.log(this._url);
   }
 
   /**

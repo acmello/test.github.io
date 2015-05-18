@@ -17,7 +17,17 @@
   * @param {Object} a image object
   **/
   var buildLargeImage = function(img) {
-    return ['<img src="' + img.src + "'/>"].join("");
+    return [
+      '<figure class="media--large">',
+      '<img src="' + img.src + '" alt="" class="media__img">',
+      '<figurecaption class="media__body">',
+      '<span class="username">' + img.username + '</span>',
+      '</figurecaption>',
+      '</figure>',
+      '<div class="detail">',
+      '<p class="detail__paragraph">' + img.text + '</p>',
+      '</div> '
+    ].join("");
   }
 
   /**
@@ -25,7 +35,16 @@
   * @param {Object} a image object
   **/
   var buildSmallImage = function(img) {
-    return ['<img src="' + img.src + "'/>"].join("");
+    return [
+      '<div class="col-33-100">',
+      '<figure class="media--small">',
+      '<img src="' + img.src + '" alt="" class="media__img">',
+      '<figurecaption class="media__body">',
+      '<span class="username">'+ img.username +'</span>',
+      '</figurecaption>',
+      '</figure>',
+      '</div>',
+    ].join("");
   }
 
   /**

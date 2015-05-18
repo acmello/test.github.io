@@ -14,8 +14,8 @@
 	];
 
 	var nodes = []
-	var secondSection = document.getElementsByClassName('second-section')[0];
-	var firstSection  = document.getElementsByClassName('first-section')[0];
+	var firstSection = document.getElementsByClassName('main-container')[0];
+	var secondSection  = document.getElementsByClassName('side-container')[0];
 
 	function template() {
 		var fragment = document.createDocumentFragment()
@@ -29,7 +29,7 @@
 				element = buildSmallPicture(images[i]);
 				fragment.appendChild(element);
 			}
-			
+
 			nodes.push(element);
 		}
 
@@ -44,7 +44,7 @@
 		col.className = 'col-33-100';
 
 		figure = document.createElement('figure');
-		figure.className = 'media--large'; 
+		figure.className = 'media--large';
 
 		img = document.createElement('img');
 		img.className = (className || 'media__img fadeIn animated');
@@ -66,13 +66,13 @@
 	}
 
 	function buildSmallPicture(path, className) {
-		var  col, figure, img; 
+		var  col, figure, img;
 
 		col = document.createElement('div');
 		col.className = 'col-33-100';
 
 		figure = document.createElement('figure');
-		figure.className = 'media__large'; 
+		figure.className = 'media__large';
 
 		img = document.createElement('img');
 		img.className = (className || 'media__img-small fadeIn animated');
@@ -88,7 +88,7 @@
 		setTimeout(function() {
 			var el = firstSection.children[0];
 			images.push(images.shift());
-			
+
 			setTimeout(function() {
 				firstSection.removeChild(el);
 				firstSection.appendChild(buildMainPicture(images[0]));
@@ -99,7 +99,7 @@
 		}, 3000);
 	})();
 
-	
+
 
 	template();
 })();
