@@ -1,0 +1,24 @@
+/* minimalist grid system */
+
+.grid {
+	display: block;
+}
+
+.grid:before, .grid:after  {
+	content: " ";
+	clear: both;
+	display: table;
+	zoom: 1;
+}
+
+[class*='col-'] {
+	float: left;
+}
+
+.col-50-100 {
+	width: 50%;
+}
+
+.col-33-100 {
+	width: 33.3333333%;
+}

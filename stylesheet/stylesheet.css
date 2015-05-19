@@ -1,0 +1,44 @@
+/* container with fixed size */
+
+body {
+  background: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.media--large {
+  max-width: 576px;
+  width: 576px;
+  height: 576px;
+}
+
+.media--small {
+  width: 192px;
+  height: 192px;
+}
+
+.media__body .username {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: white;
+  padding: 0 .55em;
+  background-color: rgba(152, 152, 152, 0.7);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.detail {
+  color: white;
+  font-size: 2em;
+}
+
+.detail__paragraph {
+  width: 440px;
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instashow</title>
+	<!-- custom fonts -->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,100,300' rel='stylesheet' type='text/css'>
+ -->
+	<!-- vendors -->
+	<link rel="stylesheet" href="stylesheet/animate.css">
+
+	<!-- helpers -->
+	<link rel="stylesheet" href="stylesheet/reset.css">
+	<link rel="stylesheet" href="stylesheet/grid.css">
+
+	<!-- instashow stylesheet -->
+	<link rel="stylesheet" href="stylesheet/stylesheet.css">
+</head>
+<body>
+	<div class="container">
+		<div class="grid">
+			<div class="col-50-100 main-container">
+				<!-- <figure class="media--large">
+					<img src="images/main.jpg" alt="" class="media__img">
+					<figurecaption class="media__body">
+						<span class="username">@Carlos_Rivin</span>
+					</figurecaption>
+				</figure>
+				<div class="detail">
+					<p class="detail__paragraph">Hoje o dia amanhaceu e a vida se transformou... #instaSerra #instaserra</p>
+				</div> -->
+			</div>
+			<div class="col-50-100 side-container">
+        <!-- <div class="col-33-100">
+  				<figure class="media--small">
+            <img src="images/main.jpg" alt="" class="media__img">
+            <figurecaption class="media__body">
+              <span class="username">@Carlos_Rivin</span>
+            </figurecaption>
+          </figure>
+        </div>-->
+      </div>
+		</div>
+	</div>
+
+	<!-- vendors -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/prefix-free/prefixfree.min.js"></script>
+	<script src="bower_components/eventEmitter/EventEmitter.min.js"></script>
+	<script src="bower_components/underscore/underscore-min.js"></script>
+	<script src="bower_components/almond/almond.js"></script>
+
+  <script type="text/javascript">
+    window.Instashow = {};
+  </script>
+
+   <!-- current script stack -->
+  <script src="javascript/models/image-service.js"></script>
+  <script src="javascript/controllers/image-controller.js"></script>
+  <script src="javascript/views/image-view.js"></script>
+
+
+	<!-- instashow bootstrap -->
+  <script src="javascript/app.js"></script>
+
+</body>
+</html>
