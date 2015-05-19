@@ -1,7 +1,7 @@
 ;(function(global) {
   'use strict'
 
-  function buildURL(urlObj) {
+  var buildURL = function(urlObj) {
     var url = urlObj.url.concat(urlObj.call)
       , params = urlObj.params
       , key
@@ -15,6 +15,22 @@
     }
 
     return url;
+  }
+
+  var ajax = function(url) {
+    $.ajax({
+      url: url,
+      dataType: "json",
+      success: function (data) {
+        alert(JSON.stringify(data));
+      }
+    });
+  }
+
+  var get = function(url) {
+    $.get(url, function(response) {
+      console.log(response);
+    });
   }
 
   /**
@@ -32,7 +48,7 @@
   * Get all images available
   **/
   ImageService.prototype.getAll = function() {
-    return ajax(url);
+    ajax(this._url);
   }
 
   // global API

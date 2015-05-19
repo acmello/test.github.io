@@ -4,17 +4,18 @@
 
   // setting up the service provider
   var service = new instashow.ImageService({
-    url: 'http://instashow.jelasticlw.com.br/instashow/app/mobile/',
+    url: 'http://instashow.jelasticlw.com.br/Instashow/app/mobile/',
     call: "getClientData",
     params: {
-      clientId: 123456,
+      clientId: 'PRINT',
       lastTimestamp: new Date().getTime(),
-      maxSize: 2
-    }
+      maxSize: 2,
+   }
   });
 
   // fire up the app
   controller.init();
+  controller.getData(service);
   view.init();
 
 })(window.Instashow);

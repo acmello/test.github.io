@@ -15,7 +15,19 @@
   * Runs the loop to execute the carousel
   * that changes the images sequence
   **/
-  var run = function() {
+  //var run = function() {
+
+  //};
+
+  /**
+  * Get the first item on index 0 and move to the
+  * end of the list.length-1
+  **/
+  var moveToEnd = function() {
+    this.data.push(this.data.shift());
+  };
+
+  ImageController.prototype.init = function() {
     var current, upcoming;
 
     if(this.data.length > 0) {
@@ -32,17 +44,8 @@
     }
   };
 
-  /**
-  * Get the first item on index 0 and move to the
-  * end of the list.length-1
-  **/
-  var moveToEnd = function() {
-    this.data.push(this.data.shift());
-  };
-
-  ImageController.prototype.init = function() {
-      console.log("controller is running...");
-      //run();
+  ImageController.prototype.getData = function(service) {
+    service.getAll();
   };
 
   // global API
